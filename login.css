@@ -2,10 +2,17 @@
 	
 	html,body {
 		background-image: url("Imagens/fundo.jpg");
+		position: fixed;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
 		background-size: cover;
-		background-repeat: no-repeat;
+		background-position: center center;
 		height: 100%;
-		font-family: 'Numans', sans-serif;
+		-webkit-transform: translateZ(0);
+		transform:translateZ(0) ;
+		will-change: transform;
 	}
 
 	.container {
