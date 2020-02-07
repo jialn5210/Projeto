@@ -1,41 +1,84 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-    <title>Signin Template for Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <title>Login Page</title>
 
 
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
-    <link href="signin.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 
-<body class="text-center">
-    <form class="form-signin">
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
-            height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+
+<body>
+    <div class="d-flex justify-content-center">
+        <h1>Bem Vindo</h1>
+    </div>
+
+
+    <div class="container">
+
+        <div class="d-flex justify-content-center h-100">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+                    <div class="d-flex justify-content-end ">
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <form action="inicial.html" onsubmit="return verificar()">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="name" placeholder="nome">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="subname" placeholder="apelido">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
-    </form>
+    </div>
+    </div>
+    <script>
+        function verificar() {
+            var nome1 = document.getElementById('name').value;
+            var nome2 = document.getElementById('subname').value;
+
+            if (nome1 == "" || nome2 == "") {
+                alert("Preenche todos os Campos");
+                return false;
+            }
+            else {
+                alert("Bem-Vindo " + nome1 + " " + nome2 + " ao nosso site!");
+                return true;
+            }
+        }
+
+    </script>
 </body>
 
 </html>
