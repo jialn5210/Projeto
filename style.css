@@ -66,10 +66,12 @@ html,body{
 .social a{
     font-size: 4.5em;
     padding: 2rem;
+
     
 }
 .fa-facebook{
     color: #3b5998;
+    
 }
 .fa-twitter{
     color: #00aced;
@@ -91,7 +93,7 @@ footer{
     color: #d5d5d5;
     padding-top: 5rem;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 hr.light{
     border-top: 1px solid #d5d5d5;
