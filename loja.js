@@ -33,7 +33,7 @@
                 const cartItem = document.createElement("div");
                 cartItem.classList.add("cart.item", "d-flex", "justify-content-between", "text-capitalize", "my-3");
                 cartItem.innerHTML = `
-                
+                  
                   <img src="${item.img}" class="img-fluid rounded-circle" id="item-img" alt="">
                   <div class="cart-item-text">
       
@@ -45,6 +45,7 @@
                     <i class="fas fa-trash"></i>
                   </a>
                 </div>
+                
                 `;
 
                 //selecionar produto
@@ -54,6 +55,7 @@
                 cart.insertBefore(cartItem, total);
                 alert("Produto adicionado ao carrinho");
                 Showtotal();
+                
             }
         });
     });
@@ -78,5 +80,13 @@
         document.getElementById("item-count").textContent = total.length;
     }
 
-
+    (function () {
+        const comprar = document.getElementById("checkout-cart");
+       
+    
+        comprar.addEventListener("click", function () {
+            alert("Obrigado pela sua compra!");
+            
+        });
+    })();
 })();
