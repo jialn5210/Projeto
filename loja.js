@@ -19,12 +19,12 @@
 
             if (event.target.parentElement.classList.contains("store-item-icon")) {
                 let fullPath = event.target.parentElement.previousElementSibling.src;
-                let pos = fullPath.indexOf("img") + 3 ;
+                let pos = fullPath.indexOf("img") + 3;
                 let partPath = fullPath.slice(pos);
                 const item = {};
                 item.img = `img-carrinho${partPath}`;
                 let name = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
-                item.name=name;
+                item.name = name;
                 let price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
 
                 let finalPrice = price.slice(1).trim();
@@ -32,7 +32,7 @@
 
                 const cartItem = document.createElement("div");
                 cartItem.classList.add("cart.item", "d-flex", "justify-content-between", "text-capitalize", "my-3");
-                cartItem.innerHTML =`
+                cartItem.innerHTML = `
                 
                   <img src="${item.img}" class="img-fluid rounded-circle" id="item-img" alt="">
                   <div class="cart-item-text">
@@ -49,13 +49,34 @@
 
                 //selecionar produto
 
-                const cart=document.getElementById("cart");
-                const total=document.querySelector(".cart-total-container");
-                cart.insertBefore(cartItem,total);
-                alert("Produto adicionado ao carrinho"); 
-                
+                const cart = document.getElementById("cart");
+                const total = document.querySelector(".cart-total-container");
+                cart.insertBefore(cartItem, total);
+                alert("Produto adicionado ao carrinho");
+                Showtotal();
             }
         });
     });
+
+
+    //totals
+    function Showtotal() {
+        const total = [];
+        const items = document.querySelectorAll(".cart-item-price");
+        items.forEach(function (item) {
+            total.push(parseFloat(item.textContent));
+        });
+
+        const totalvalor = total.reduce(function (total, item) {
+            total += item;
+            return total;
+        }, 0)
+        const valorfinal = totalvalor.toFixed(2);
+
+        document.getElementById("cart-total").textContent = valorfinal;
+        document.querySelector(".item-total").textContent = valorfinal;
+        document.getElementById("item-count").textContent = total.length;
+    }
+
 
 })();

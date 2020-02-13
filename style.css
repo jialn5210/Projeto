@@ -158,7 +158,7 @@ footer a{
     background: var(--mainBlack);
     color: var(--mainPink);
   }
-
+  
   .cart {
     position: absolute;
     min-height: 10rem;
@@ -189,7 +189,7 @@ footer a{
   #cart-item-price {
     font-size: 0.8rem;
   }
- 
+  
   /* butoes carrinho */
   .btn-pink {
     color: var(--mainPink) !important;
